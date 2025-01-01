@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ locale }}</title>
+    </head>
+    <body>
+        <h1>Stock prices of {{ locale }} {% if project %} (projected) {% endif %} </h1>
+            <img src="{{ url_for('fig', locale=locale) }}" alt="Stock trends for {{ locale }}">
+        <form action="/submit_projection" method="POST">
+            <p>Select a date you'd like to project to (enter in mm/dd/yy or it will not work):
+                <input type="text" name="date" placeholder="mm/dd/yy">
+                <input type="submit" value="Submit"></p>
+        </form>
+
+    </body>
+</html>
